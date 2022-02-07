@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CBMS.Entity.Model.Employee>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <div class="col-12">
+        <h3>EmployeeDetails</h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Employee No</th>
+                    <th>Employee Name</th>
+                    <th>Employee Type</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Employee in Model)
+                {
+                    <tr>
+                        <td>@Employee.empId</td>
+                        <td>@Employee.empName</td>
+                        <td>@Employee.empType</td>
+                        <td><a asp-controller=" " asp-action=" " asp-route-EmployeeId="@Employee.empId">Edit</a></td>
+                        <td><a asp-controller=" " asp-action=" " asp-route-EmployeeId="@Employee.empId">Delete</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

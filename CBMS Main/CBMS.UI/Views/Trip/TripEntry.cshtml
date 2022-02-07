@@ -1,0 +1,39 @@
+﻿@model CBMS.Entity.Model.Trip
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" enctype="multipart/form-data">
+    <h2>Trip Entry</h2><hr />
+    <div class="form-group">
+        <label>Trip Id</label>
+        <input type="text" asp-for="tripId" class="form-control" placeholder="enter tripid" required />
+    </div>
+    <div class="form-group">
+        <label>RouteDetails</label>
+        <input type="text" asp-for="routeDetails" class="form-control" placeholder="enter routeDetails " required />
+    </div>
+
+    <div class="form-group">
+        <label>Trip Count</label>
+        <input type="text" asp-for="tripCount" class="form-control" placeholder="enter tripcount " required />
+    </div>
+
+    <input type="submit" value="Save" class="btn btn-outline-success" />
+    <input type="button" value="Reset" class="btn btn-outline-secondary" />
+    <hr />
+
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div> 
+     }
+     else if (ViewBag.status == "Error")
+     {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+     }
+</form>

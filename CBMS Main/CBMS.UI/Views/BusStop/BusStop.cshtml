@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CBMS.Entity.Model.BusStop>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="row">
+    <div class="col-12">
+        <h3>Bus Stop </h3>
+        <hr />
+        <table class="table table-light table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Bus Stop No</th>
+                    <th>Bus Stop Name</th>
+                    <th>Arrival Time </th>
+                    <th>Departure Time </th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var BusStop in Model)
+                 {
+                    <tr>
+                    <td>@BusStop.busStopNo</td>
+                    <td>@BusStop.stopName </td>
+                    <td>@BusStop.arrivalTime</td>
+                    <td>@BusStop.depatureTime</td>
+                    <td><a asp-controller=" " asp-action=" " asp-route-BusStopNo="@BusStop.busStopNo">Edit</a></td>
+                    <td><a asp-controller=" " asp-action=" " asp-route-BusStopNo="@BusStop.busStopNo">Delete</a></td>
+                    </tr>
+                 }
+            </tbody>
+        </table>
+    </div>
+</div>
